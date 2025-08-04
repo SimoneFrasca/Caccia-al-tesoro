@@ -1,0 +1,53 @@
+<!-- nona prova, contrade -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enigma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione9'); checkBlock('sezione10');">
+  <div class="container">
+    <h2>🛡️ Enigma 🛡️</h2>
+
+    <p class="decorato">
+      Complimenti! È evidente che nessun angolo di Afifle riesce a celarsi ai vostri occhi attenti.  
+      L’enigma precedente non era affatto semplice, eppure lo avete superato con ingegno.  
+      Per mettere ulteriormente alla prova il vostro acume, ecco un nuovo rompicapo.  
+      Ildemondo amava recitare questa misteriosa poesia:
+    </p>
+
+    <p style="text-align: center;"><i>
+      "gesti antichi rivelano battaglie, amori, tempeste, elogi, lacrime, leggende, avventure<br>
+      corvi aprono montagne, passaggi antichi nascosti in luoghi eterni<br>
+      torri osservano rocce, rupi eterne<br>
+      cieli azzurri volano alti tra antenati<br>
+      pendii ombrosi, grotte gorgoglianti, incanti oscuri<br>
+      tempeste oscure ruggiscono ancora"
+      </i></p>
+
+    <p>
+      Ancora oggi, nessuno è riuscito a decifrarne il significato.  
+      Ma forse voi sì. Se il vostro ingegno sarà all’altezza, queste parole vi condurranno in un luogo unico, inconfondibile.  
+      Una volta lì, aguzzate la vista: la chiave da decifrare si trova proprio sopra i vostri occhi.
+    </p>
+
+    <p>
+      Inserite qui sotto la chiave numerica per proseguire.  
+      (Attenzione: da ora l’<i>handicap</i> sale a 10 minuti.)
+    </p>
+
+
+    <input type="text" id="key" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione10')">Invia</button>
+    <p id="error" class="error"></p>
+    <p id="timer" class="info"></p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

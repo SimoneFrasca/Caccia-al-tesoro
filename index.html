@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0066cc">
+    <title>Benvenuto</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Benvenuti alla nuova edizione della caccia al tesoro!</h1>
+        <p class="decorato">
+            Anche quest’anno i nostri autori si sono sbizzarriti con nuove idee e giochi coinvolgenti. Ma prima di
+            iniziare, vi chiediamo di leggere attentamente il regolamento. È uno strumento importante per tutti: perché
+            sì, è un gioco… ma anche il gioco ha bisogno delle sue regole.
+        </p>
+
+        <p>Qualche regola semplice (tranquilli, non serve una laurea in giurisprudenza):</p>
+
+        <ol style="margin-left: 20px;">
+            <li>
+                <b>Gioco = divertimento</b>, ma anche rispetto. La caccia è prima di tutto un’attività ludica, ma anche
+                un’esperienza sociale. Ci aspettiamo quindi un comportamento corretto: tra compagni di squadra, verso le
+                altre squadre e verso noi organizzatori. Anche se ogni tanto un vaf*****lo ce lo meritiamo... ma
+                contate fino a dieci: si scherza! Detto questo, ci teniamo molto che il gioco sia pulito e
+                rispettoso.<br>
+                ➤ No a comportamenti scorretti,<br>
+                ➤ No a voci false per screditare gli altri,<br>
+                ➤ No a furbate fuori dallo spirito del gioco.
+            </li>
+
+            <li>
+                <b>Il capitano</b>, che avete scelto all'inizio della caccia, sarà l'unica persona della squadra che
+                potrà
+                interfacciarsi con noi e consegnare le prove.
+                Tutti gli altri dovranno rivolgersi a lui/lei per qualsiasi comunicazione. Abbiamo creato una chat di
+                gruppo per facilitare
+                la comunicazione tra noi e i capitani.
+            </li>
+
+            <li>
+                <b>Niente proprietà private.</b> Nessuna prova vi chiederà di entrare in proprietà private. Se lo fate,
+                state sbagliando.
+            </li>
+
+            <li>
+                <b>Chi rompe paga.</b> L’organizzazione non si assume responsabilità per danni a oggetti o persone.
+            </li>
+
+            <li>
+                <b>Se vi fate male...</b> Anche qui, ci dispiace, ma non ci riteniamo responsabili per eventuali
+                infortuni (avete
+                firmato il modulo di scarico responsabilità, vero?). Comunque, le prove sono pensate per essere sicure.
+                Se non fate
+                cose strane, non vi fate male per l'amor di Dio.
+            </li>
+
+            <li>
+                <b>Avete fatto il pieno?</b> Potete usare per spostarvi qualsiasi mezzo: auto, moto, scooter,
+                bicicletta,
+                monopattino elettrico, nave, aereo, elicottero, Space Shuttle... (e ovviamente le gambe, sfaticati)
+            </li>
+
+            <li>
+                <b>Si chiama caccia al tesoro...</b> Quindi se siete in cerca di un indizio non venite subito a dirci
+                che
+                non lo trovate (altrimenti si chiamerebbe "il tesoro è lì"). In due edizioni non è mai successo che un
+                indizio è andato perso, perciò aguzzate la vista.
+            </li>
+
+            <li>
+                <b>Leggete attentamente</b>. COmprendiamo la foga per essere i più veloci a superare una prova, però 
+                vi diamo questo consiglio spassionato. Le prove sono tante, il tempo è tanto, perdere un minuto di 
+                più a leggere bene la prova vi permetterà di risparmiare molto tempo. 
+            </li>
+
+            <li>
+                <b>Quest'anno si va digital!</b> Parte della caccia si svolgerà tramite questa piattaforma online.
+                Le credenziali di accesso che vi abbiamo fornito sono unicamente per la vostra vostra: tenetele sempre a
+                portata di mano,
+                perché vi serviranno in diverse prove e non comunicatela ad altre squadre, perché potrebbero "rubare"
+                le soluzioni delle prove.
+
+                La regola principale è semplice: ✔️ <b>LA RISPOSTA CORRETTA È UNA SOLA.</b>
+                Finché non la inserite, non potete proseguire. Niente scuse, niente bug: se il quiz non vi fa andare
+                avanti, c’è solo una spiegazione possibile — <b>avete sbagliato risposta</b>.
+
+                È frustrante? Forse. Ma così evitiamo code infinite, proteste inutili e discussioni senza fine.
+                Fidatevi, è meglio così.
+
+                Per rendere le cose ancora più interessanti, abbiamo introdotto un piccolo <i>handicap</i> temporale:
+                ogni risposta errata comporterà un breve periodo di attesa (che può andare da 1 minuto fino a 10 minuti)
+                prima di poter riprovare.
+
+                Domanda: vi verranno segnalate le risposte sbagliate?
+                <b>Ovviamente no.</b> Dovrete essere voi a capire se avete risposto correttamente o meno.
+
+                <br>
+                P.S. Visto che vi servirà un dispositivo mobile per tutta la durata della caccia, assicuratevi che sia
+                ben carico!
+            </li>
+        </ol><br>
+
+        <p><b>Buon divertimento, e che vinca il migliore!</b></p>
+
+
+        *Eventuali riferimenti a personaggi, luoghi ed eventi sono in parte reali e in parte frutto della fantasia
+        degli autori.
+        <p>
+        <p>Inserisci nome utente e password</p>
+        <input type="text" id="username" placeholder="Nome utente (es. squadra_1)">
+        <input type="password" id="password" placeholder="Password (es. psw_squadra_1)">
+        <button onclick="login()">Accedi</button>
+        <p id="login-error" class="error"></p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js").then(
+                    function (registration) {
+                        console.log("Service Worker registrato con successo:", registration.scope);
+                    },
+                    function (err) {
+                        console.log("Registrazione Service Worker fallita:", err);
+                    }
+                );
+            });
+        }
+    </script>
+</body>
+
+</html>

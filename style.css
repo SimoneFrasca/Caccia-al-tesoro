@@ -1,0 +1,158 @@
+/* Font medievali aggiornati da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cormorant+Garamond&display=swap');
+
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* rimossa la trasformazione globale per distinguere maiuscole e minuscole */
+}
+
+/* Sfondo con immagine pergamena */
+body {
+    background: url('sfondo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Cormorant Garamond', serif;
+    color: #2e210f; /* marrone più scuro */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(255, 244, 220, 0.7); /* pergamena chiara trasparente */
+    z-index: 0;
+}
+
+/* Container con effetto carta antica */
+.container {
+    background-color: rgba(255, 248, 220, 0.95);
+    border: 4px solid #a97849; /* bordo marrone antico */
+    border-radius: 15px;
+    box-shadow: 6px 6px 10px #5c4329;
+    max-width: 700px;
+    padding: 30px 40px;
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Titolo in font molto decorativo */
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3rem;
+    color: #5a4217; /* ocra più scuro */
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px #b9a66a;
+}
+
+/* Paragrafi più leggibili */
+p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+    color: #3a2d11; /* marrone scuro più intenso */
+}
+
+/* Prima lettera decorativa tipo manoscritto */
+p.decorato::first-letter {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 4rem;
+    float: left;
+    line-height: 0.8;
+    margin-right: 12px;
+    margin-top: 4px;
+    padding: 4px 6px;
+    background: linear-gradient(135deg, #c2ab47 0%, #8a6730 100%);
+    color: #2e210f; /* colore testo più scuro */
+    border: 2px solid #5a4217;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(50, 35, 15, 0.6);
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+/* Grassetti color ocra */
+b {
+    color: #7d6231; /* ocra più scuro */
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Input con stile pergamena e font leggibile */
+input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 12px 15px;
+    margin: 12px 0 18px 0;
+    border: 2px solid #5a4217;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #fff8dc;
+    color: #3a2d11; /* testo input più scuro */
+    box-shadow: inset 2px 2px 5px #b4a156;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus input */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #b49934;
+    box-shadow: 0 0 8px #cdbd54;
+}
+
+/* Bottone stile medievale */
+button {
+    background-color: #8a6730; /* marrone scuro */
+    color: #fff8dc;
+    border: 2px solid #5a4217;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: 2px 2px 5px #3f2e16;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #5a4217; /* marrone più scuro al passaggio */
+}
+
+/* Messaggi di errore in rosso antico */
+.error {
+    color: #7b2f2f; /* rosso antico più scuro */
+    font-weight: 700;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Paragrafi centrati per la login */
+.container > p:last-of-type {
+    text-align: center;
+}
+
+/* Responsività */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 90vw;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+    }
+}

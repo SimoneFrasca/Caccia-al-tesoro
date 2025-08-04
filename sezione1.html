@@ -1,0 +1,100 @@
+<!-- seconda prova, proverbi-->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>È comme chiglio che ici!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione0'); checkBlock('sezione1');">
+  <div class="container">
+    <h2>È comme chiglio che ici!</h2>
+    <p class="decorato">Per riscaldarci, iniziamo con una prova che da sempre è presente in molte edizioni della caccia
+      al tesoro: completare alcuni detti e proverbi popolari affilani.</p>
+    <p>E quale contesto migliore di quest’anno, immersi nell'Affile medievale, dove la saggezza del popolo si
+      racchiudeva spesso nei modi di dire tramandati di generazione in generazione?</p>
+    <p>Non perdiamo dunque tempo: vi invitiamo a scrivere con <b>attenzione</b> nelle caselle di risposta. Non venite da noi in nussun caso,
+      non vi diremo nulla!</p>
+
+    <ol style="margin-left: 20px;">
+      <li>
+        Se si stracco<br>
+        <input type="text" id="q1" />
+        <hr>
+      </li>
+      <li>
+        Aglio taglio<br>
+        <input type="text" id="q2" />
+        <hr>
+      </li>
+      <li>
+        Cento ne penza<br>
+        <input type="text" id="q3" />
+        <hr>
+      </li>
+      <li>
+        Natale co glio sole e<br>
+        <input type="text" id="q4" />
+        <hr>
+      </li>
+      <li>
+        Se livi no sasso<br>
+        <input type="text" id="q5" />
+        <hr>
+      </li>
+      <li>
+        A magnà la canassa è franca, a lavorà<br>
+        <input type="text" id="q6" />
+        <hr>
+      </li>
+      <li>
+        La lengua n’tè gl’osso<br>
+        <input type="text" id="q7" />
+        <hr>
+      </li>
+      <li>
+        A glio cavaglio stracco<br>
+        <input type="text" id="q8" />
+        <hr>
+      </li>
+      <li>
+        Se possa morì gl’asino a zi prete<br>
+        <input type="text" id="q9" /><br>
+        Quando ci va a cavaglio la nepote<br>
+        <input type="text" id="q10" />
+        <hr>
+      </li>
+      <li>
+        Madonna mea e l’isola<br>
+        <input type="text" id="q11" /><br>
+        Famme morì mogliema<br>
+        <input type="text" id="q12" />
+        <hr>
+      </li>
+      <li>
+        Quando mammeta fa le cazzette<br>
+        <input type="text" id="q13" /><br>
+        Si glio mette de qua e dellà<br>
+        <input type="text" id="q14" />
+        <hr>
+      </li>
+      <li>
+        Pecoraro magna ricotta<br>
+        <input type="text" id="q15" /><br>
+        Non se leva glio cappellitto<br>
+        <input type="text" id="q16" />
+      </li>
+    </ol>
+
+    <button id="submit-btn" onclick="checkAnswers('sezione1')">Invia</button>
+    <p id="error" class="error"></p>
+    <p id="timer" class="info"></p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

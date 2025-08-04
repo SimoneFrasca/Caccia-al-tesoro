@@ -1,0 +1,34 @@
+<!-- decima prova, conta le cose tufo rustico -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta le cose</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione10'); checkBlock('sezione11');">
+  <div class="container">
+    <h2>Conta le cose 🧮</h2>
+
+    <p class="decorato">
+      Ma siete sicuri di conoscere veramente ogni luogo di Affile? Allora ditemi quanti sono i 
+    </p>
+
+    <p>Quindi credo abbiate capito di cosa tratta la prossima prova... dovete contare. Ma mi raccomando, dovete essere 
+      i più precisi possibile, perché più errori farete e più tempo perderete (2 minuti a risposta errata!).
+    </p>
+
+    <p>Quindi inizamo a scaldarci. Recatevi a Tufo Rustico e contate il numero totale di alberi (cipressi e alberi al parco giochi)</p>
+    <input type="text" id="tufo_rustico" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione11')">Invia</button>
+    <p id="error" class="error"></p>
+    <p id="timer" class="info"></p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

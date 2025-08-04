@@ -1,0 +1,29 @@
+<!-- decima prova, conta le cose cipressi cimitero -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta le cose</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione14'); checkBlock('sezione15');">
+  <div class="container">
+    <h2>Conta le cose 🧮</h2>
+
+    <p class="decorato">
+      Infine, recatevi al cimitero per contare quanti cipressi ci sono tra il bivio con la Sublacenze e il tornante.
+    </p>
+
+    <input type="text" id="cipressi_cimitero" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione15')">Invia</button>
+    <p id="error" class="error"></p>
+    <p id="timer" class="info"></p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!-- Quinta prova, recita -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'anello di Ildemondo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkLogin(); checkPrevious('sezione4'); checkBlock('sezione5');">
+  <div class="container">
+    <h2>🎭 L'anello di Ildemondo 🎭</h2>
+
+    <p class="decorato">
+      Recitare! Vi ricordate del copione scritto all'inizio della caccia?
+    </p>
+
+    <p>
+      Ogni squadra ne ha preparato uno... ma sarete così fortunati da ritrovare proprio il vostro?
+      Tornate da noi e lasciate che sia la dea bendata a decidere quale copione interpreterete (solamente in questa 
+      prova potete farvi guidare dal più fortunato della squadra, che potrà direttamente interagire con noi).
+    </p>
+
+    <p>
+      La prova consiste nel mettere in scena il copione estratto. Siate coinvolgenti, appassionati, teatrali!
+      Ogni membro della squadra dovrà scegliere un personaggio tra quelli indicati e utilizzare gli oggetti assegnati
+      per rappresentarlo al meglio. 
+    </p>
+
+    <p>
+      Scegliete una location esterna il più <i>medievale</i> possibile e realizzate una ripresa. Potete utilizzare 
+      qualsiasi dispositivo per la ripresa, ma assicuratevi che la qualità sia buona. Al termite, una volta soddisfatti del risultato,
+      tornate da noi con il video della vostra recita, il quale verrà valutato da una severa giuria di esperti teatranti. Intanto
+      avrete una pausa di 20 minuti per riposare e prepararvi al meglio per la prossima prova.
+    </p>
+
+    <p>
+      Se il responso sarà positivo ricevete la chiave per proseguire.
+    </p>
+
+    <img src="teatro.png" alt="Teatro" style="display: block; margin: 0 auto; width: 300px;">
+    
+    <input type="text" id="key" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione5')">Invia</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

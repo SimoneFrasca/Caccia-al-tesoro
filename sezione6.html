@@ -1,0 +1,40 @@
+<!-- sesta prova, puzzle foto -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione5'); checkBlock('sezione6');">
+  <div class="container">
+    <h2>🧩 Puzzle 🧩</h2>
+
+    <p class="decorato">
+      Complimenti! Se siete arrivati qui vuol dire che siete dei grandissimi attori. La recita che avete rappresentato
+      merita sicuramente un riconosimento.</p>
+
+     
+    <img src="90applausi.gif" alt="applausi" style="display: block; margin: 0 auto; width: 200px;"><br>
+
+    <p>Ora però ricordatevi che avete un tesoro da trovare. <b>NON CINCISCHIAMO</b>. All'inizio di questa prova avrete
+      sicuramente ricevuto
+      una busta contenente dei pezzi di un'immagine ritagliata. Mettete in ordine i pezzi del puzzle e trovere il luogo
+      dove dovete recarvi per cercare la chiave per alla prova successiva.
+    </p>
+
+    <p>P.S.: alla difficoltà del puzzle si aggiunge anche il fatto che le foto sono molto sfocate 😈
+    </p><br>
+
+    <p>Inserire la chiave</p>
+    <input type="text" id="key" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione6')">Invia</button>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

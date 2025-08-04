@@ -1,0 +1,38 @@
+<!-- settima-ottava prova, sant'antonio -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚽️ Grande colpo di mercato ⚽️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione7'); checkBlock('sezione8');">
+  <div class="container">
+    <h2>Sant'Antonio 🐖🍩</h2>
+
+    <p class="decorato">
+      Dopo questa breve parentesi calcistica, torniamo alla nostra caccia al tesoro.  
+      La prossima prova è semplice... ma potenzialmente molto imbarazzante!  
+      Per ottenere il prossimo indizio, dovrete convincere una persona che <b>non partecipa</b> alla caccia  
+      a recitare di fronte a noi questa celebre canzoncina in dialetto affilano:
+    </p>
+
+    <p><i>
+      Sant'Antonio a glio' deserto<br>
+      se magnea i maccaruni,<br>
+      Satansso pe' dispetto<br>
+      ci levea i furchettuni,<br>
+      Sant'Antonio non se lagna,<br>
+      co' le mani si li magna
+    </i></p>
+
+    <input type="text" id="antonio" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione8')">Invia</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

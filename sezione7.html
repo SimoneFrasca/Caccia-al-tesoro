@@ -1,0 +1,62 @@
+<!-- settima prova, articolo sportivo -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grande colpo di mercato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkLogin(); checkPrevious('sezione6'); checkBlock('sezione7');">
+  <div class="container">
+    <h2>⚽️ Grande colpo di mercato ⚽️</h2>
+
+    <p class="decorato">
+      Ottima vista! Solo i veri conoscitori del paese riescono a riconoscere ogni angolo, anche dopo una bella bevuta di
+      Cesanese 🍷.
+    </p>
+
+    <p>
+      Ora lasciamo per un attimo la caccia al tesoro per parlare di sport. Tra due settimane partirà la nuova stagione
+      del campionato di calcio,
+      e in questi giorni le squadre sono impegnate tra ritiri, allenamenti e colpi di mercato da chiudere all’ultimo
+      minuto.
+    </p>
+
+    <p>
+      Recatevi dove una volta si trovavano tutte le ultime novità sul mercato: troverete appena fresca di stampa una
+      copia della
+      <i>Domenica Sportiva di Affile</i>. All’interno, una notizia calda riguardante l’ultimo colpo del presidente della
+      squadra locale, Simone Frasca.
+      Insieme al suo direttore sportivo Giovanni Peperoni, è riuscito a far firmare un contratto multimilionario a uno
+      dei centrocampisti più ambiti in questo momento: il mitico Damiano Callari.
+    </p>
+
+    <p>
+      Non vogliamo svelarvi troppo, saranno gli esperti giornalisti a raccontarvi ogni dettaglio della trattativa, dai
+      retroscena alle cifre dell’affare.
+      Ma manca una cosa: sapete a quanto ammonta la spesa sostenuta dal nostro presidente?
+    </p>
+
+    <p>
+      Inserite il costo dell’ingaggio (senza decimali e senza punti: per esempio, 7.394.921,98€ va scritto come
+      7394921).
+    </p>
+
+    <p>
+      P.S.: Attenzione, da ora in poi l'<i>handicap</i> di tempo in caso di risposta sbagliata sarà di 5 minuti, quindi
+      ragionate con calma!
+    </p>
+
+    <input type="text" id="costo" style="display: block; margin: 0 auto;" /><br>
+    <button id="submit-btn" onclick="checkAnswers('sezione7')">Invia</button>
+    <p id="error" class="error"></p>
+    <p id="timer" class="info"></p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
