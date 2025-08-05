@@ -63,7 +63,7 @@ const RISPOSTE = {
   "sezione11": { cimitero: "35" },
   "sezione12": { letora: "16" },
   "sezione13": { tufo_rustico: "45" },
-  "sezione14": { parco: ["257","258","259","260","261","262","263","264","265","266","267",]},
+  "sezione14": { parco: ["259","260","261","262","263","264","265"]},
   "sezione15": { bottino: "10" },
 };
 
