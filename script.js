@@ -85,11 +85,11 @@ const CHIAVI_SEZIONE6 = {
 const TEMPI_BLOCCO = {
   /*sezione0: 60000,     // 1 minuto
   sezione1: 60000,     // 1 minuto
-  sezione2: 60000,     // 1 minuto
+  sezione2: 0,     // non serve
   sezione3: 180000,     // 3 minuti
-  sezione4: 60000,     // 1 minuto
-  sezione5: 60000,     // 1 minuto
-  sezione6: 60000,     // 1 minuto
+  sezione4: 0,     // non serve
+  sezione5: 0,     // non serve
+  sezione6: 0,     // non serve
   sezione7: 300000,    // 5 minuti
   sezione8: 300000,    // 5 minuti
   sezione9: 300000,    // 5 minuti
