@@ -86,7 +86,7 @@ const TEMPI_BLOCCO = {
   /*sezione0: 60000,     // 1 minuto
   sezione1: 60000,     // 1 minuto
   sezione2: 60000,     // 1 minuto
-  sezione3: 120000,     // 2 minuti
+  sezione3: 180000,     // 3 minuti
   sezione4: 60000,     // 1 minuto
   sezione5: 60000,     // 1 minuto
   sezione6: 60000,     // 1 minuto
