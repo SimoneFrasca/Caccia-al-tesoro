@@ -63,7 +63,7 @@ const RISPOSTE = {
   "sezione11": { cimitero: "35" },
   "sezione12": { letora: "16" },
   "sezione13": { tufo_rustico: "45" },
-  "sezione14": { parco: "262" },
+  "sezione14": { parco: ["257","258","259","260","261","262","263","264","265","266","267",]},
   "sezione15": { bottino: "10" },
 };
 
@@ -169,7 +169,16 @@ function checkAnswers(sezione) {
   for (let key in risposteCorrette) {
     const input = document.getElementById(key);
     const val = input?.value || "";
-    const corretta = normalizza(val) === normalizza(risposteCorrette[key]);
+    const rispostaUtente = normalizza(val);
+
+    const rispostaCorretta = risposteCorrette[key];
+
+    let corretta = false;
+    if (Array.isArray(rispostaCorretta)) {
+      corretta = rispostaCorretta.some(r => normalizza(r) === rispostaUtente);
+    } else {
+      corretta = normalizza(rispostaCorretta) === rispostaUtente;
+    }
 
     if (!corretta) {
       corrette = false;
@@ -201,6 +210,7 @@ function checkAnswers(sezione) {
     startTimer(sezione);
   }
 }
+
 
 function mostraFeedback(sezione) {
   const risposteCorrette = RISPOSTE[sezione];
