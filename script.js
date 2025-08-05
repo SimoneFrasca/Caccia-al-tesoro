@@ -62,9 +62,9 @@ const RISPOSTE = {
   "sezione10": { key: "492867" },
   "sezione11": { cimitero: "35" },
   "sezione12": { letora: "16" },
-  "sezione13": { : "1" },
-  "sezione14": { finestre_scuola: "1" },
-  "sezione15": { cipressi_cimitero: "1" },
+  "sezione13": { tufo_rustico: "45" },
+  "sezione14": { parco: "262" },
+  "sezione15": { bottino: "10" },
 };
 
 // 🔑 CHIAVI PERSONALIZZATE PER SEZIONE 6
