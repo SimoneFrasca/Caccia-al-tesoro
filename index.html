@@ -73,9 +73,9 @@
             </li>
 
             <li>
-                <b>Leggete attentamente</b>. COmprendiamo la foga per essere i più veloci a superare una prova, però 
-                vi diamo questo consiglio spassionato. Le prove sono tante, il tempo è tanto, perdere un minuto di 
-                più a leggere bene la prova vi permetterà di risparmiare molto tempo. 
+                <b>Leggete attentamente</b>. COmprendiamo la foga per essere i più veloci a superare una prova, però
+                vi diamo questo consiglio spassionato. Le prove sono tante, il tempo è tanto, perdere un minuto di
+                più a leggere bene la prova vi permetterà di risparmiare molto tempo.
             </li>
 
             <li>
@@ -87,7 +87,10 @@
 
                 La regola principale è semplice: ✔️ <b>LA RISPOSTA CORRETTA È UNA SOLA.</b>
                 Finché non la inserite, non potete proseguire. Niente scuse, niente bug: se il quiz non vi fa andare
-                avanti, c’è solo una spiegazione possibile — <b>avete sbagliato risposta</b>.
+                avanti, c’è solo una spiegazione possibile — <b>avete sbagliato risposta</b>. Non ci sono scuse di
+                lettere maiuscole, minuscle, accenti, e qualsiasi altro segno di punteggiatura. Il programma è stato
+                ideato pensando a queste eventualità, quindi l'errore non sarà sicuramente legato a questa
+                eventualità.<br>
 
                 È frustrante? Forse. Ma così evitiamo code infinite, proteste inutili e discussioni senza fine.
                 Fidatevi, è meglio così.
@@ -97,23 +100,35 @@
                 prima di poter riprovare.
 
                 Domanda: vi verranno segnalate le risposte sbagliate?
-                <b>Ovviamente no.</b> Dovrete essere voi a capire se avete risposto correttamente o meno.
+                <b>Ovviamente no.</b> Dovrete essere voi a capire se avete risposto correttamente o meno.<br>
 
-                <br>
-                P.S. Visto che vi servirà un dispositivo mobile per tutta la durata della caccia, assicuratevi che sia
-                ben carico!
+                <i>Esempio: Chi scoprì l'America?
+                    <ol style="margin-left: 20px;">
+                        <li> Cristoforo Colombo, riposta corretta</li>
+                        <li> cristoforo colombo, risposta corretta anche se le iniziali sono minuscole</li>
+                        <li> Colombo, risposta errata, manca il nome</li>
+                        <li> Dante Alighieri, avete sbagliato proprio risposta</li>
+                </i>
+
             </li>
         </ol><br>
 
+        P.S. Visto che vi servirà un dispositivo mobile per tutta la durata della caccia, assicuratevi che sia
+        ben carico! Inoltre <b>consigliamo caldamente</b> di appuntarvi le risposte corrette, perché non sia mai che il
+        telefono
+        si scarica o si rompe (facciamo le corna) ma se riprendete da un altro dispositivo dovete ricominciare
+        da capo e reinserire tutte le risposte (in quanto la <a href="https://it.wikipedia.org/wiki/Cache">cache</a> è
+        dell'account del dispositivo e non dell'utente della caccia)
+        <br><br>
         <p><b>Buon divertimento, e che vinca il migliore!</b></p>
 
 
         *Eventuali riferimenti a personaggi, luoghi ed eventi sono in parte reali e in parte frutto della fantasia
         degli autori.
         <p>
-        <p>Inserisci nome utente e password</p>
-        <input type="text" id="username" placeholder="Nome utente (es. squadra_1)">
-        <input type="password" id="password" placeholder="Password (es. psw_squadra_1)">
+        <p>Inserisci nome utente e password (da inserire tutto in minuscolo)</p>
+        <input type="text" id="username" placeholder="Nome utente">
+        <input type="password" id="password" placeholder="Password">
         <button onclick="login()">Accedi</button>
         <p id="login-error" class="error"></p>
     </div>

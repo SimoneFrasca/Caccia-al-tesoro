@@ -1,8 +1,15 @@
 // 🔐 CREAZIONE UTENTI squadra_1 ... squadra_10
-const USERS = {};
-for (let i = 1; i <= 10; i++) {
-  USERS[`squadra_${i}`] = `psw_squadra_${i}`;
-}
+const USERS = {
+  pantasemi: "ziwpdz",
+  vizzochi: "pqjcsq",
+  pampani: "jmmzva",
+  follacciani: "zdknkl",
+  pronghitti: "vzedfm",
+  agline: "azrijl",
+  sezzeleca: "gqcxgi",
+  manicuti: "nqivkw"
+};
+
 
 // ✅ RISPOSTE CORRETTE PER OGNI SEZIONE
 const RISPOSTE = {
@@ -13,7 +20,7 @@ const RISPOSTE = {
     q3: "una ne fa",
     q4: "pasqua co glio tizzo",
     q5: "se scarozza la macera",
-    q6: "la vita e cionca",
+    q6: "a lavora la vita e cionca",
     q7: "ma glosso scoccia",
     q8: "ci pizzica glio tavano",
     q9: "quando ci va a cavaglio la nepote",
@@ -23,7 +30,10 @@ const RISPOSTE = {
     q13: "glio mazzareglio addo si glio mette",
     q14: "che belle cazzette che mammeta fa",
     q15: "va alla messa e non se nzonocchia",
-    q16: "pecoraro sia benitto"
+    q16: "pecoraro sia benitto",
+    q17: "si comme la castegna",
+    q18: "glasino porta la paglia",
+    q19: "triste chella casa addo laglina canta"
   },
   "sezione2": { q1: "garofano" },
   "sezione3": {
@@ -59,16 +69,14 @@ const RISPOSTE = {
 
 // 🔑 CHIAVI PERSONALIZZATE PER SEZIONE 6
 const CHIAVI_SEZIONE6 = {
-  squadra_1: "vento",
-  squadra_2: "acqua",
-  squadra_3: "fuoco",
-  squadra_4: "terra",
-  squadra_5: "fulmine",
-  squadra_6: "nebbia",
-  squadra_7: "ghiaccio",
-  squadra_8: "ferro",
-  squadra_9: "luce",
-  squadra_10: "ombra"
+  pantasemi: "vento",
+  vizzochi: "acqua",
+  pampani: "fuoco",
+  follacciani: "terra",
+  pronghitti: "fulmine",
+  agline: "nebbia",
+  sezzeleca: "ghiaccio",
+  manicuti: "ferro"
 };
 
 // ⏳ TEMPI DI BLOCCO PER OGNI SEZIONE
@@ -78,7 +86,7 @@ const TEMPI_BLOCCO = {
   /*sezione0: 60000,     // 1 minuto
   sezione1: 60000,     // 1 minuto
   sezione2: 60000,     // 1 minuto
-  sezione3: 60000,     // 1 minuto
+  sezione3: 120000,     // 2 minuti
   sezione4: 60000,     // 1 minuto
   sezione5: 60000,     // 1 minuto
   sezione6: 60000,     // 1 minuto
@@ -156,25 +164,71 @@ function checkPrevious(sezionePrecedente) {
 function checkAnswers(sezione) {
   const risposteCorrette = RISPOSTE[sezione];
   let corrette = true;
+  let feedbackMostrato = false;
 
   for (let key in risposteCorrette) {
-    const val = document.getElementById(key)?.value;
-    if (normalizza(val || "") !== normalizza(risposteCorrette[key])) {
+    const input = document.getElementById(key);
+    const val = input?.value || "";
+    const corretta = normalizza(val) === normalizza(risposteCorrette[key]);
+
+    if (!corretta) {
       corrette = false;
     }
   }
 
   if (corrette) {
     localStorage.setItem(sezione + "_completato", "true");
+    localStorage.removeItem(sezione + "_errorCount");
     window.location.href = nextPage(sezione);
   } else {
-    const TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000; // default 60s
+    // Incrementa contatore errori
+    let count = parseInt(localStorage.getItem(sezione + "_errorCount") || "0");
+    count++;
+    localStorage.setItem(sezione + "_errorCount", count);
+
+    // Se più di 5 errori, mostra feedback dettagliato
+    if (count >= 5) {
+      mostraFeedback(sezione);
+      feedbackMostrato = true;
+    }
+
+    const TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000;
     const tempoSec = Math.floor(TEMPO_BLOCCO / 1000);
     document.getElementById("error").textContent = `Alcune risposte sono errate. Riprova tra ${tempoSec} secondi.`;
     const now = Date.now();
     localStorage.setItem(sezione + "_blockUntil", now + TEMPO_BLOCCO);
     disableForm();
     startTimer(sezione);
+  }
+}
+
+function mostraFeedback(sezione) {
+  const risposteCorrette = RISPOSTE[sezione];
+
+  for (let key in risposteCorrette) {
+    const input = document.getElementById(key);
+    if (!input) continue;
+
+    const rispostaUtente = normalizza(input.value || "");
+    const rispostaCorretta = normalizza(risposteCorrette[key]);
+
+    const esito = document.createElement("span");
+    esito.style.marginLeft = "10px";
+
+    if (rispostaUtente === rispostaCorretta) {
+      esito.textContent = "✅";
+      esito.style.color = "green";
+    } else {
+      esito.textContent = `❌`;
+      esito.style.color = "red";
+    }
+
+    // Rimuovi eventuali feedback precedenti
+    if (input.nextElementSibling && input.nextElementSibling.tagName === "SPAN") {
+      input.nextElementSibling.remove();
+    }
+
+    input.parentNode.insertBefore(esito, input.nextSibling);
   }
 }
 
