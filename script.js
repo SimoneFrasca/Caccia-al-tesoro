@@ -60,9 +60,9 @@ const RISPOSTE = {
   "sezione8": { antonio: "cruciverba" },
   "sezione9": { animale: "spinosa" },
   "sezione10": { key: "492867" },
-  "sezione11": { tufo_rustico: "1" },
-  "sezione12": { sacrario: "1" },
-  "sezione13": { mattoncini: "1" },
+  "sezione11": { cimitero: "35" },
+  "sezione12": { letora: "16" },
+  "sezione13": { : "1" },
   "sezione14": { finestre_scuola: "1" },
   "sezione15": { cipressi_cimitero: "1" },
 };
