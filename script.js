@@ -60,11 +60,11 @@ const RISPOSTE = {
   "sezione8": { antonio: "cruciverba" },
   "sezione9": { animale: "spinosa" },
   "sezione10": { key: "492867" },
-  "sezione11": { cimitero: "35" },
-  "sezione12": { letora: "16" },
-  "sezione13": { tufo_rustico: "45" },
-  "sezione14": { parco: ["258","259","260","261","262","263","264"] },
-  "sezione15": { bottino: "10" },
+  "sezione11": { tufo_rustico: "1" },
+  "sezione12": { sacrario: "1" },
+  "sezione13": { mattoncini: "1" },
+  "sezione14": { finestre_scuola: "1" },
+  "sezione15": { cipressi_cimitero: "1" },
 };
 
 // 🔑 CHIAVI PERSONALIZZATE PER SEZIONE 6
@@ -85,7 +85,7 @@ const INDIZI = {
     "💡 Indizio 2: Ricordatevi del bonus (fa parte del prezzo del cartellino)",
     "💡 Indizio 3: 17 gol, 11 assist e una ammonizione, sembra che a DaMiAnO piacciano i numeri dispari",
     "💡 Indizio 4: Il DS ha lavorato tanto, ha dovuto aggiungere anche il cognome per far quadrare il conto",
-    "💡 Indizio 5: Avete fatto le 'somme buone'? Vi deve tornare una cifra tonda!"
+    "💡 Indizio 5: Avete fatto le 'somme buone'? Vi deve tornare un numero tondo!"
   ]
 };
 
@@ -171,6 +171,7 @@ function checkPrevious(sezionePrecedente) {
   }
 }
 
+
 function checkAnswers(sezione) {
   const risposteCorrette = RISPOSTE[sezione];
   let corrette = true;
@@ -179,7 +180,16 @@ function checkAnswers(sezione) {
   for (let key in risposteCorrette) {
     const input = document.getElementById(key);
     const val = input?.value || "";
-    const corretta = normalizza(val) === normalizza(risposteCorrette[key]);
+    const rispostaUtente = normalizza(val);
+
+    const rispostaCorretta = risposteCorrette[key];
+
+    let corretta = false;
+    if (Array.isArray(rispostaCorretta)) {
+      corretta = rispostaCorretta.some(r => normalizza(r) === rispostaUtente);
+    } else {
+      corretta = normalizza(rispostaCorretta) === rispostaUtente;
+    }
 
     if (!corretta) {
       corrette = false;
