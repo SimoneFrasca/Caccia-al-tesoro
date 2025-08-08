@@ -60,11 +60,11 @@ const RISPOSTE = {
   "sezione8": { antonio: "cruciverba" },
   "sezione9": { animale: "spinosa" },
   "sezione10": { key: "492867" },
-  "sezione11": { cimitero: "35" },
-  "sezione12": { letora: "16" },
-  "sezione13": { tufo_rustico: "45" },
-  "sezione14": { parco: ["259","260","261","262","263","264","265"]},
-  "sezione15": { bottino: "10" },
+  "sezione11": { tufo_rustico: "1" },
+  "sezione12": { sacrario: "1" },
+  "sezione13": { mattoncini: "1" },
+  "sezione14": { finestre_scuola: "1" },
+  "sezione15": { cipressi_cimitero: "1" },
 };
 
 // 🔑 CHIAVI PERSONALIZZATE PER SEZIONE 6
@@ -79,26 +79,36 @@ const CHIAVI_SEZIONE6 = {
   manicuti: "ferro"
 };
 
+const INDIZI = {
+  sezione7: [
+    "💡 Indizio 1: Il costo del contratto non coincide con il costo del cartellino.",
+    "💡 Indizio 2: Ricordatevi del bonus (fa parte del prezzo del cartellino)",
+    "💡 Indizio 3: 17 gol, 11 assist e una ammonizione, sembra che a DaMiAnO piacciano i numeri dispari",
+    "💡 Indizio 4: Il DS ha lavorato tanto, ha dovuto aggiungere anche il cognome per far quadrare il conto",
+    "💡 Indizio 5: Avete fatto le 'somme buone'? Vi deve tornare un numero tondo!"
+  ]
+};
+
 // ⏳ TEMPI DI BLOCCO PER OGNI SEZIONE
 // Questi sono i tempi in millisecondi per bloccare l'utente dopo risposte errate
 // Puoi personalizzare questi valori in base alle tue esigenze
 const TEMPI_BLOCCO = {
   /*sezione0: 60000,     // 1 minuto
   sezione1: 60000,     // 1 minuto
-  sezione2: 0,     // non serve
-  sezione3: 180000,     // 3 minuti
-  sezione4: 0,     // non serve
-  sezione5: 0,     // non serve
-  sezione6: 0,     // non serve
+  sezione2: 60000,     // 1 minuto
+  sezione3: 120000,     // 2 minuti
+  sezione4: 60000,     // 1 minuto
+  sezione5: 60000,     // 1 minuto
+  sezione6: 60000,     // 1 minuto
   sezione7: 300000,    // 5 minuti
   sezione8: 300000,    // 5 minuti
   sezione9: 300000,    // 5 minuti
   sezione10: 600000,    // 10 minuti
-  sezione11: 180000,     // 3 minuti
-  sezione12: 180000,     // 3 minuti
-  sezione13: 180000,     // 3 minuti
-  sezione14: 180000,     // 3 minuti
-  sezione15: 180000,     // 3 minuti*/
+  sezione11: 120000,     // 2 minuti
+  sezione12: 120000,     // 2 minuti
+  sezione13: 120000,     // 2 minuti
+  sezione14: 120000,     // 2 minuti
+  sezione15: 120000,     // 2 minuti*/
   sezione0: 2000,     // 1 minuto
   sezione1: 2000,     // 1 minuto
   sezione2: 2000,     // 1 minuto
@@ -106,7 +116,7 @@ const TEMPI_BLOCCO = {
   sezione4: 2000,     // 1 minuto
   sezione5: 2000,     // 1 minuto
   sezione6: 2000,     // 1 minuto
-  sezione7: 2000,    // 5 minuti
+  sezione7: 8000,    // 5 minuti
   sezione8: 2000,    // 5 minuti
   sezione9: 2000,    // 5 minuti
   sezione10: 2000,    // 10 minuti
@@ -169,16 +179,7 @@ function checkAnswers(sezione) {
   for (let key in risposteCorrette) {
     const input = document.getElementById(key);
     const val = input?.value || "";
-    const rispostaUtente = normalizza(val);
-
-    const rispostaCorretta = risposteCorrette[key];
-
-    let corretta = false;
-    if (Array.isArray(rispostaCorretta)) {
-      corretta = rispostaCorretta.some(r => normalizza(r) === rispostaUtente);
-    } else {
-      corretta = normalizza(rispostaCorretta) === rispostaUtente;
-    }
+    const corretta = normalizza(val) === normalizza(risposteCorrette[key]);
 
     if (!corretta) {
       corrette = false;
@@ -195,22 +196,30 @@ function checkAnswers(sezione) {
     count++;
     localStorage.setItem(sezione + "_errorCount", count);
 
+    const TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000;
+    const tempoSec = Math.floor(TEMPO_BLOCCO / 1000);
+    let messaggio = `Alcune risposte sono errate. Riprova tra ${tempoSec} secondi.`;
+
     // Se più di 5 errori, mostra feedback dettagliato
     if (count >= 5) {
       mostraFeedback(sezione);
       feedbackMostrato = true;
     }
 
-    const TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000;
-    const tempoSec = Math.floor(TEMPO_BLOCCO / 1000);
-    document.getElementById("error").textContent = `Alcune risposte sono errate. Riprova tra ${tempoSec} secondi.`;
+    if (sezione === "sezione7" && count <= 5) {
+      const indizio = INDIZI.sezione7[count - 1];  // 0-based
+      if (indizio) {
+        messaggio += "\n\n" + indizio;
+      }
+    }
+
+    document.getElementById("error").textContent = messaggio;
     const now = Date.now();
     localStorage.setItem(sezione + "_blockUntil", now + TEMPO_BLOCCO);
     disableForm();
     startTimer(sezione);
   }
 }
-
 
 function mostraFeedback(sezione) {
   const risposteCorrette = RISPOSTE[sezione];
