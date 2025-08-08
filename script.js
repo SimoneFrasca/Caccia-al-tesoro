@@ -69,14 +69,14 @@ const RISPOSTE = {
 
 // 🔑 CHIAVI PERSONALIZZATE PER SEZIONE 6
 const CHIAVI_SEZIONE6 = {
-  pantasemi: "vento",
-  vizzochi: "acqua",
-  pampani: "fuoco",
-  follacciani: "terra",
-  pronghitti: "fulmine",
-  agline: "nebbia",
-  sezzeleca: "ghiaccio",
-  manicuti: "ferro"
+  pantasemi: "mbe_sui",
+  vizzochi: "mbe_sui",
+  pampani: "mbe_sui",
+  follacciani: "mbe_sui",
+  pronghitti: "mbe_sui",
+  agline: "mbe_sui",
+  sezzeleca: "mbe_sui",
+  manicuti: "mbe_sui"
 };
 
 const INDIZI = {
