@@ -57,7 +57,7 @@ const RISPOSTE = {
     q16: "Luigi Ciuffa"
   },
   "sezione5": { key: "premio_oscar" },
-  "sezione6": {},
+  "sezione6": { foto: "vammoriammazzato"},
   "sezione7": { costo: "70000000" },
   "sezione8": { antonio: "cruciverba" },
   "sezione9": { animale: "spinosa" },
