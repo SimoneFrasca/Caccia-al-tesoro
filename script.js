@@ -197,7 +197,7 @@ function checkAnswers(sezione) {
     }
     
     const tempoSec = Math.floor(TEMPO_BLOCCO / 1000);
-    let messaggio = `Rsiposta/e errata/e. Riprova tra ${tempoSec} secondi.`;
+    let messaggio = `Risposta/e errata/e. Riprova tra ${tempoSec} secondi.`;
 
     // Se più di 5 errori, mostra feedback dettagliato
     if (count >= 5) {
