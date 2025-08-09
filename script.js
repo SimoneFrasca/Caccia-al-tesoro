@@ -227,6 +227,10 @@ function checkAnswers(sezione) {
       }
     }
 
+    if (sezione === "sezione7" && count > 5) {
+      TEMPO_BLOCCO = 1;
+    }
+    
     document.getElementById("error").textContent = messaggio;
     const now = Date.now();
     localStorage.setItem(sezione + "_blockUntil", now + TEMPO_BLOCCO);
