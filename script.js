@@ -191,6 +191,11 @@ function checkAnswers(sezione) {
     localStorage.setItem(sezione + "_errorCount", count);
 
     const TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000;
+
+    if (sezione === "sezione7" && count > 5) {
+      TEMPO_BLOCCO = 60000  || 60000;
+    }
+    
     const tempoSec = Math.floor(TEMPO_BLOCCO / 1000);
     let messaggio = `Alcune risposte sono errate. Riprova tra ${tempoSec} secondi.`;
 
@@ -205,10 +210,6 @@ function checkAnswers(sezione) {
       if (indizio) {
         messaggio += "\n\n" + indizio;
       }
-    }
-
-    if (sezione === "sezione7" && count > 5) {
-      TEMPO_BLOCCO = 60000  || 60000;
     }
     
     document.getElementById("error").textContent = messaggio;
