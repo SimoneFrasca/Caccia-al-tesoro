@@ -7,7 +7,9 @@ const USERS = {
   pronghitti: "vzedfm",
   agline: "azrijl",
   sezzeleca: "gqcxgi",
-  manicuti: "nqivkw"
+  manicuti: "nqivkw",
+  straccali: "hsfhrz",
+  mmascari: "bfhaek"
 };
 
 
@@ -76,7 +78,9 @@ const CHIAVI_SEZIONE6 = {
   pronghitti: "mbe_sui",
   agline: "mbe_sui",
   sezzeleca: "mbe_sui",
-  manicuti: "mbe_sui"
+  manicuti: "mbe_sui",
+  straccali: "mbe_sui",
+  mmascari: "mbe_sui"
 };
 
 const INDIZI = {
