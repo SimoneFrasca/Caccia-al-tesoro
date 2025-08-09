@@ -71,7 +71,7 @@ const RISPOSTE = {
 
 const INDIZI = {
   sezione7: [
-    "💡 Indizio 1: Il costo del contratto non coincide con il costo del cartellino.",
+    "💡 Indizio 1: Il costo del contratto non è con il costo del cartellino.",
     "💡 Indizio 2: Ricordatevi del bonus (fa parte del prezzo del cartellino)",
     "💡 Indizio 3: 17 gol, 11 assist e una ammonizione, sembra che a DaMiAnO piacciano i numeri dispari",
     "💡 Indizio 4: Il DS ha lavorato tanto, ha dovuto aggiungere anche il cognome per far quadrare il conto",
