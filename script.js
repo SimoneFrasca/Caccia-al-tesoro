@@ -190,7 +190,7 @@ function checkAnswers(sezione) {
     count++;
     localStorage.setItem(sezione + "_errorCount", count);
 
-    const TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000;
+    let TEMPO_BLOCCO = TEMPI_BLOCCO[sezione] || 60000;
 
     if (sezione === "sezione7" && count > 5) {
       TEMPO_BLOCCO = 60000  || 60000;
