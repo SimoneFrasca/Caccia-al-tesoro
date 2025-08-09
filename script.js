@@ -228,7 +228,7 @@ function checkAnswers(sezione) {
     }
 
     if (sezione === "sezione7" && count > 5) {
-      TEMPO_BLOCCO = 1;
+      TEMPO_BLOCCO = 60000  || 60000;
     }
     
     document.getElementById("error").textContent = messaggio;
