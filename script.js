@@ -69,20 +69,6 @@ const RISPOSTE = {
   "sezione15": { bottino: "10" }
 };
 
-// 🔑 CHIAVI PERSONALIZZATE PER SEZIONE 6
-const CHIAVI_SEZIONE6 = {
-  pantasemi: "mbe_sui",
-  vizzochi: "mbe_sui",
-  pampani: "mbe_sui",
-  follacciani: "mbe_sui",
-  pronghitti: "mbe_sui",
-  agline: "mbe_sui",
-  sezzeleca: "mbe_sui",
-  manicuti: "mbe_sui",
-  straccali: "mbe_sui",
-  mmascari: "mbe_sui"
-};
-
 const INDIZI = {
   sezione7: [
     "💡 Indizio 1: Il costo del contratto non coincide con il costo del cartellino.",
@@ -131,12 +117,6 @@ const TEMPI_BLOCCO = {
   sezione15: 2000,     // 2 minuti
   // ... aggiungi tutte le sezioni che ti servono
 };
-
-// 📌 Imposta chiave personalizzata per sezione6
-const utente = localStorage.getItem("utente");
-if (utente in CHIAVI_SEZIONE6) {
-  RISPOSTE["sezione6"].key = CHIAVI_SEZIONE6[utente];
-}
 
 // 🔓 Funzione di login
 function login() {
