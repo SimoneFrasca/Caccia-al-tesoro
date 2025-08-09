@@ -9,7 +9,7 @@ const USERS = {
   sezzeleca: "gqcxgi",
   manicuti: "nqivkw",
   straccali: "hsfhrz",
-  mmascari: "bfhaek"
+  lope: "bfhaek"
 };
 
 
