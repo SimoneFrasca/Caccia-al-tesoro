@@ -83,13 +83,13 @@ const INDIZI = {
 // Questi sono i tempi in millisecondi per bloccare l'utente dopo risposte errate
 // Puoi personalizzare questi valori in base alle tue esigenze
 const TEMPI_BLOCCO = {
-  sezione0: 60000,     // 1 minuto
-  sezione1: 60000,     // 1 minuto
-  sezione2: 60000,     // 1 minuto
-  sezione3: 120000,     // 2 minuti
-  sezione4: 60000,     // 1 minuto
-  sezione5: 60000,     // 1 minuto
-  sezione6: 60000,     // 1 minuto
+  sezione0: 0,     // 1 minuto
+  sezione1: 0,     // 1 minuto
+  sezione2: 0,     // 1 minuto
+  sezione3: 0,     // 2 minuti
+  sezione4: 0,     // 1 minuto
+  sezione5: 0,     // 1 minuto
+  sezione6: 0,     // 1 minuto
   sezione7: 300000,    // 5 minuti
   sezione8: 300000,    // 5 minuti
   sezione9: 300000,    // 5 minuti
