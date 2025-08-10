@@ -83,7 +83,7 @@ const INDIZI = {
 // Questi sono i tempi in millisecondi per bloccare l'utente dopo risposte errate
 // Puoi personalizzare questi valori in base alle tue esigenze
 const TEMPI_BLOCCO = {
-  /*sezione0: 60000,     // 1 minuto
+  sezione0: 60000,     // 1 minuto
   sezione1: 60000,     // 1 minuto
   sezione2: 60000,     // 1 minuto
   sezione3: 120000,     // 2 minuti
@@ -94,12 +94,12 @@ const TEMPI_BLOCCO = {
   sezione8: 300000,    // 5 minuti
   sezione9: 300000,    // 5 minuti
   sezione10: 600000,    // 10 minuti
-  sezione11: 120000,     // 2 minuti
-  sezione12: 120000,     // 2 minuti
-  sezione13: 120000,     // 2 minuti
-  sezione14: 120000,     // 2 minuti
-  sezione15: 120000,     // 2 minuti*/
-  sezione0: 2000,     // 1 minuto
+  sezione11: 180000,     // 3 minuti
+  sezione12: 180000,     // 3 minuti
+  sezione13: 180000,     // 3 minuti
+  sezione14: 180000,     // 3 minuti
+  sezione15: 180000     // 3 minuti
+  /*sezione0: 2000,     // 1 minuto
   sezione1: 2000,     // 1 minuto
   sezione2: 2000,     // 1 minuto
   sezione3: 2000,     // 1 minuto
@@ -115,7 +115,7 @@ const TEMPI_BLOCCO = {
   sezione13: 2000,     // 2 minuti
   sezione14: 2000,     // 2 minuti
   sezione15: 2000,     // 2 minuti
-  // ... aggiungi tutte le sezioni che ti servono
+  // ... aggiungi tutte le sezioni che ti servono*/
 };
 
 // 🔓 Funzione di login
